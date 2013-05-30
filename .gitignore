@@ -1,0 +1,8 @@
+tmp/*
+Plugin/*
+Vendor/*
+webroot/files/*
+webroot/assets/*
+composer.phar
+composer.lock
+!empty

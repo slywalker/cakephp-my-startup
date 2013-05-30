@@ -1,0 +1,16 @@
+{
+	"require": {
+		"pear-cakephp/cakephp": "2.3.5",
+		"cakephp/debug_kit": "2.2.*@dev",
+		"slywalker/base": "dev-master"
+	},
+	"config": {
+		"vendor-dir": "Vendor/"
+	},
+	"repositories": [
+		{
+			"type": "pear",
+			"url": "http://pear.cakephp.org"
+		}
+	]
+}
