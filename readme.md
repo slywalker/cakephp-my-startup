@@ -1,4 +1,4 @@
-#CekePHP My Startup
+#CakePHP My Startup
 
 ##What this do?
 
