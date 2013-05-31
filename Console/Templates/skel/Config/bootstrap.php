@@ -35,12 +35,56 @@ Configure::write('debug', (env('CAKE_DEBUG')) ?: 0);
 
 // Develop settings
 if (Configure::read('debug') > 0) {
+	$duration = '+10 seconds';
+	Cache::config('_cake_core_', array(
+		'duration' => $duration
+	));
+	Cache::config('_cake_model_', array(
+		'duration' => $duration
+	));
+	//Configure::write('Cache.disable', true);
 	Configure::write('Error.trace', true);
 	Configure::write('Exception.log', true);
 }
 
-// Setup a 'default' cache configuration for use in the application.
-Cache::config('default', array('engine' => 'Apc'));
+// Cache settings
+$engine = 'Apc';
+$prefix = Inflector::slug(APP_DIR) . '_';
+$servers = array('127.0.0.1:11211'); // Memcache
+
+Cache::config('default', array(
+	'engine' => $engine,
+	'prefix' => $prefix . 'default_',
+	'servers' => $servers,
+	'duration' => '+1 hours'
+));
+
+Cache::config('short', array(
+	'engine' => $engine,
+	'prefix' => $prefix . 'short_',
+	'path' => CACHE,
+	'serialize' => ($engine === 'File'),
+	'servers' => $servers,
+	'duration' => '+10 minutes'
+));
+
+Cache::config('long', array(
+	'engine' => $engine,
+	'prefix' => $prefix . 'long_',
+	'path' => CACHE,
+	'serialize' => ($engine === 'File'),
+	'servers' => $servers,
+	'duration' => '+1 days'
+));
+
+Cache::config('eternal', array(
+	'engine' => $engine,
+	'prefix' => $prefix . 'eternal_',
+	'path' => CACHE,
+	'serialize' => ($engine === 'File'),
+	'servers' => $servers,
+	'duration' => '+999 days'
+));
 
 /**
  * The settings below can be used to set additional paths to models, views and controllers.

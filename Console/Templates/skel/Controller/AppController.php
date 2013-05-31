@@ -37,8 +37,34 @@ class AppController extends Controller {
 		'Session',
 		'Security',
 		'RequestHandler',
-		'Base.BaseAction',
-		'DebugKit.Toolbar'
+		'Base.BaseAction' => array(
+			'flash' => array(
+				'element' => 'alert',
+				'key' => 'flash',
+				'params' => array(
+					'plugin' => 'TwitterBootstrap'
+				),
+				'success' => array(
+					'params' => array('class' => 'alert-success')
+				),
+				'error' => array(
+					'params' => array('class' => 'alert-error')
+				)
+			)
+		),
+		'DebugKit.Toolbar' => array(
+			'panels' => array(
+				'DebugKitPlus.Configure',
+				'DebugKitPlus.RequestPlus'
+			)
+		)
+	);
+
+	public $helpers = array(
+		'Session',
+		'Html' => array('className' => 'TwitterBootstrap.BootstrapHtml'),
+		'Form' => array('className' => 'TwitterBootstrap.BootstrapForm'),
+		'Paginator' => array('className' => 'TwitterBootstrap.BootstrapPaginator'),
 	);
 
 }

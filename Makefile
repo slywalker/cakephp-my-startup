@@ -14,6 +14,7 @@ build:
 	@echo "Install Composer Packages..."
 	@./composer.phar install
 	@./Vendor/bin/cake bake project ${PWD} --empty --skel=./Console/Templates/skel
+	@chmod -R 0777 ./tmp
 	@./Vendor/bin/cake bake db_config
 	@echo "Install Bower Components..."
 	@bower install
