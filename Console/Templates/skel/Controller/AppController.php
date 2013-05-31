@@ -37,6 +37,7 @@ class AppController extends Controller {
 		'Session',
 		'Security',
 		'RequestHandler',
+		'Base.BaseAction',
 		'DebugKit.Toolbar'
 	);
 
