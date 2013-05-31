@@ -31,9 +31,10 @@ require APP . 'Vendor' . DS . 'autoload.php';
 spl_autoload_unregister(array('App', 'load'));
 spl_autoload_register(array('App', 'load'), true, true);
 
+Configure::write('debug', (env('CAKE_DEBUG')) ?: 0);
+
 // Develop settings
-if (env('CAKE_DEBUG')) {
-	Configure::write('debug', env('CAKE_DEBUG'));
+if (Configure::read('debug') > 0) {
 	Configure::write('Error.trace', true);
 	Configure::write('Exception.log', true);
 }
