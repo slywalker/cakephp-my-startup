@@ -1,5 +1,7 @@
 #CakePHP My Startup
 
+This project is expected to continue to change me to be easy to use.
+
 ##What this do?
 
  - Install Conposer.phar
