@@ -1,6 +1,6 @@
 {
 	"require": {
-		"pear-cakephp/cakephp": "2.3.5",
+		"pear-cakephp/cakephp": "2.3.*",
 		"cakephp/debug_kit": "2.2.*@dev",
 		"slywalker/debug_kit_plus": "dev-master",
 		"slywalker/base": "dev-master",
