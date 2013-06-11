@@ -54,6 +54,7 @@ class AppController extends Controller {
 		),
 		'DebugKit.Toolbar' => array(
 			'panels' => array(
+				'DebugKitPlus.Apc',
 				'DebugKitPlus.Configure',
 				'DebugKitPlus.RequestPlus'
 			)
