@@ -4,7 +4,7 @@
 		"cakephp/debug_kit": "2.2.*@dev",
 		"slywalker/debug_kit_plus": "dev-master",
 		"slywalker/base": "dev-master",
-		"slywalker/twitter_bootstrap": "dev-master"
+		"slywalker/boost_cake": "dev-master"
 	},
 	"config": {
 		"vendor-dir": "Vendor/"
