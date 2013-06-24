@@ -1,0 +1,43 @@
+server {
+	app_name your_application_name;
+
+	listen 80 default_server;
+	server_name _;
+	root /home/ubuntu/$app_name/current/webroot;
+	index index.php index.html index.htm;
+
+	access_log off;
+	error_log /home/ubuntu/$app_name/shared/log/nginx-error.log;
+
+	add_header Access-Control-Allow-Origin *;
+
+	##
+	# Request / Upload Max Body Size
+	##
+	client_max_body_size 20m;
+	client_body_buffer_size 128k;
+
+	try_files $uri $uri/ /index.php?$args;
+
+	##
+	# Pass PHP requests to PHP-FPM
+	##
+	location ~ \.php$ {
+		try_files $uri =404;
+
+		fastcgi_split_path_info ^(.+\.php)(/.+)$;
+		include fastcgi_params;
+		fastcgi_pass 127.0.0.1:9000;
+		fastcgi_index index.php;
+		fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+	}
+
+	##
+	# Prevent (deny) Access to Hidden Files
+	##
+	location ~ /\. {
+		access_log off;
+		log_not_found off;
+		deny all;
+	}
+}
