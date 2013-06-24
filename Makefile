@@ -13,9 +13,9 @@ build:
 	@curl -sS https://getcomposer.org/installer | php
 	@echo "Install Composer Packages..."
 	@./composer.phar install
-	@./Vendor/bin/cake bake project ${PWD} --empty --skel=./Console/Templates/skel
+	@php -d "apc.enable_cli=1" ./Vendor/bin/cake.php --app ${PWD} bake project ${PWD} --empty --skel=./Console/Templates/skel
 	@chmod -R 0777 ./tmp
-	@./Vendor/bin/cake bake db_config
+	@php -d "apc.enable_cli=1" ./Vendor/bin/cake.php --app ${PWD} bake db_config
 	@echo "Install Bower Components..."
 	@bower install
 	@echo "\n${HR}"
