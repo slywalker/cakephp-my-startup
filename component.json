@@ -4,6 +4,7 @@
   "dependencies": {
     "jquery": "~1.9.1",
     "bootstrap": "~2.3.2",
+    "fuelux": "~2.3.0",
     "html5shiv": "~3.6.2"
   }
 }
