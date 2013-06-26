@@ -68,4 +68,6 @@ class AppController extends Controller {
 		'Paginator' => array('className' => 'BoostCake.BoostCakePaginator'),
 	);
 
+	public $paginate = array('paramType' => 'querystring');
+
 }
