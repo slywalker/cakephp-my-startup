@@ -37,6 +37,9 @@ class AppController extends Controller {
 		'Session',
 		'Security',
 		'RequestHandler',
+		'Paginator' => array(
+			'paramType' => 'querystring'
+		),
 		'Base.BaseAction' => array(
 			'flash' => array(
 				'element' => 'alert',
@@ -67,7 +70,5 @@ class AppController extends Controller {
 		'Form' => array('className' => 'BoostCake.BoostCakeForm'),
 		'Paginator' => array('className' => 'BoostCake.BoostCakePaginator'),
 	);
-
-	public $paginate = array('paramType' => 'querystring');
 
 }
