@@ -5,6 +5,7 @@
     "jquery": "~1.9.1",
     "bootstrap": "~2.3.2",
     "fuelux": "~2.3.0",
+    "bootstrap-datetimepicker": "~0.0.11",
     "html5shiv": "~3.6.2"
   }
 }
