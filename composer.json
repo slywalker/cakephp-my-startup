@@ -2,10 +2,10 @@
 	"require": {
 		"pear-cakephp/cakephp": "2.3.*",
 		"cakephp/debug_kit": "2.2.*@dev",
-		"cakedc/search": "dev-develop",
-		"slywalker/debug_kit_plus": "dev-master",
-		"slywalker/base": "dev-master",
-		"slywalker/boost_cake": "dev-master",
+		"cakedc/search": "*",
+		"slywalker/debug_kit_plus": "*",
+		"slywalker/base": "*",
+		"slywalker/boost_cake": "*",
 		"mjohnson/uploader": "4.*"
 	},
 	"config": {
